@@ -1,1 +1,160 @@
+%-------------------------
+% ATS-Optimized Resume in LaTeX
+% Author: Ankit Raj
+% Focus: AI / Machine Learning
+%-------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+% ---------- PAGE SETUP (Tightened for single page) ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.7in}
+\setlength{\footskip}{3.60004pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+% ---------- SECTION FORMATTING ----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+% ---------- CUSTOM COMMANDS ----------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-1pt}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+%==================================================
+%                    RESUME START
+%==================================================
+\begin{document}
+%---------- HEADING ----------
+\begin{center}
+    {\Huge \scshape Ankit Raj} \\ \vspace{4pt}
+    \small
+    \faPhone\ \href{tel:+919508656237}{+91-9508656237} $|$
+    \faEnvelope\ \href{mailto:ankitraj3736@gmail.com}{ankitraj3736@gmail.com} $|$
+    \faLinkedin\ \href{https://www.linkedin.com/in/ankit-raj-319201307/}{linkedin.com/in/Ankit-Raj} $|$
+    \faGithub\ \href{https://github.com/ankitraj36}{github.com/ankitraj36} \\[2pt]
+    \faMapMarker*\ Bhubaneswar, Odisha, India
+\end{center}
+%---------- PROFESSIONAL SUMMARY ----------
+\section{Summary}
+  \small{Aspiring AI/ML Engineer and B.Tech CSE (Honours) student at SOA University with hands-on experience in machine learning, deep learning, and data science. Built end-to-end ML pipelines for classification, regression, and NLP tasks using Python, TensorFlow, PyTorch, and Scikit-learn. Proficient in data preprocessing, feature engineering, model training/evaluation, and deploying ML models as REST APIs. Strong foundation in mathematics (linear algebra, probability, statistics) and data structures \& algorithms with active competitive programming practice.}
+%---------- TECHNICAL SKILLS ----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+    \small{\item{
+     \textbf{Languages:}{ Python, C, C++, Java, SQL, JavaScript} \\
+     \textbf{ML/DL Frameworks:}{ TensorFlow, Keras, PyTorch, Scikit-learn, XGBoost, LightGBM} \\
+     \textbf{Data Science \& Visualization:}{ NumPy, Pandas, Matplotlib, Seaborn, Plotly} \\
+     \textbf{NLP \& GenAI:}{ Hugging Face Transformers, LangChain, OpenAI API, NLTK, spaCy} \\
+     \textbf{Databases:}{ MySQL, MongoDB, Pinecone (Vector DB)} \\
+     \textbf{Tools \& Platforms:}{ Git, GitHub, Jupyter Notebook, Google Colab, VS Code, Docker, Streamlit, Flask} \\
+     \textbf{Core Concepts:}{ Supervised \& Unsupervised Learning, CNNs, RNNs, Transformers, GANs, Reinforcement Learning, Data Structures \& Algorithms, OOP, DBMS, Linear Algebra, Probability \& Statistics}
+    }}
+ \end{itemize}
+
+%---------- PROFESSIONAL EXPERIENCE ----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Full Stack Web Developer Intern}{April 2025 -- July 2025}
+      {Zidio Development}{Remote}
+      \resumeItemListStart
+        \resumeItem{Engineered 3+ full-stack web applications using React.js, Node.js, Express.js, and MongoDB, reducing page load time by 30\% through component optimization and lazy loading}
+        \resumeItem{Designed and implemented 10+ RESTful API endpoints with Express.js middleware and JWT-based authentication, handling 1,000+ daily requests with 99.5\% uptime}
+        \resumeItem{Built pixel-perfect responsive front-end interfaces with HTML5, CSS3, and JavaScript, achieving cross-browser compatibility across Chrome, Firefox, Safari, and Edge}
+        \resumeItem{Collaborated with a 5-member agile team using Git version control, participating in daily stand-ups, sprint planning, and peer code reviews}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%---------- PROJECTS ----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{College Lover -- Student Social Platform} $|$ \emph{React.js, Node.js, Express.js, MongoDB, Tailwind CSS}}{}
+          \resumeItemListStart
+            \resumeItem{Architected and deployed a full-stack social networking platform serving 500+ students with real-time post feeds, user authentication, and campus event collaboration features}
+            \resumeItem{Engineered MongoDB-backed data layer with Mongoose ODM, implementing indexed queries that reduced average response time by 40\% across user profiles and post retrieval}
+            \resumeItem{Implemented fully responsive UI with Tailwind CSS and Bootstrap achieving consistent UX across mobile, tablet, and desktop viewports}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Breast Cancer Prediction System} $|$ \emph{Python, Scikit-learn, Pandas, NumPy, Matplotlib}}{}
+          \resumeItemListStart
+            \resumeItem{Built an end-to-end ML classification pipeline achieving \textbf{95\% accuracy} by training and comparing Logistic Regression, Decision Tree, and Random Forest models on 569 patient records}
+            \resumeItem{Automated data preprocessing pipeline with feature scaling, exploratory data analysis, and SMOTE-based class-imbalance handling, boosting F1-score by 8\%}
+            \resumeItem{Evaluated model performance using confusion matrix, precision-recall curves, and ROC-AUC metrics; visualized top 10 feature importances for clinical interpretability}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%---------- EDUCATION ----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Siksha 'O' Anusandhan (Deemed to be University) -- ITER}{Bhubaneswar, Odisha}
+      {B.Tech in Computer Science \& Engineering (Honours) | CGPA: 7.98}{2023 -- 2027}
+      
+
+    \resumeSubheading
+      {Park Mount Public School}{}
+      {Intermediate (XII) | Percentage: 58\%}{}
+
+    \resumeSubheading
+      {Baldwin Academy}{}
+      {Matriculation (X) | Percentage: 66\%}{}
+  \resumeSubHeadingListEnd
+
+%---------- CERTIFICATIONS & ACHIEVEMENTS ----------
+\section{Certifications \& Achievements}
+    \resumeItemListStart
+        \resumeItem{\textbf{LeetCode DSA Practitioner} -- Consistently solving Data Structures \& Algorithms problems; strengthening competitive programming skills}
+        \resumeItem{\textbf{AWS Academy Graduate -- Cloud Foundations} -- Completed AWS Academy Cloud Foundations training covering core AWS services, security, architecture, and cloud economics}
+        \resumeItem{\textbf{Web Hackathon -- PRAAVAH'25, IIT Bhubaneswar} -- Designed and built a functional web prototype within 24-hour time constraints}
+    \resumeItemListEnd
+
+%==================================================
+\end{document} 
+
+
 
