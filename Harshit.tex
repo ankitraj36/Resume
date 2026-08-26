@@ -1,1 +1,296 @@
+%-------------------------
+% Premium One-Page Resume — Harshit Raj
+% Sidebar Layout · Compiles with pdfLaTeX
+%-------------------------
+\documentclass[a4paper]{article}
+
+%──── Packages ────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,
+  top=0pt, bottom=0pt, left=0pt, right=0pt,
+  nohead, nofoot, nomarginpar]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{microtype}
+
+%──── Page Style ──────────────────────────────────────────
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0pt}
+\setlength{\topskip}{0pt}
+
+%──── Dimensions ──────────────────────────────────────────
+\newlength{\sidewidth}\setlength{\sidewidth}{7cm}
+\newlength{\mainwidth}\setlength{\mainwidth}{14cm}
+\newlength{\sidepad}\setlength{\sidepad}{0.55cm}
+\newlength{\mainpad}\setlength{\mainpad}{0.6cm}
+
+%──── Colors ──────────────────────────────────────────────
+\definecolor{sidebar}{HTML}{F2F1ED}            % warm cream
+\definecolor{accent}{HTML}{1C2833}             % very dark slate
+\definecolor{subtext}{HTML}{5D6D7E}            % medium gray
+\definecolor{rulecolor}{HTML}{C5CBCE}          % light gray
+\definecolor{sidehead}{HTML}{2C3E50}           % dark blue-gray
+\definecolor{siderule}{HTML}{B5BAC0}           % sidebar rules
+
+%──── Custom Commands ─────────────────────────────────────
+% Sidebar section heading
+\newcommand{\sidesec}[1]{%
+  \vspace{9pt}%
+  {\fontsize{8}{10}\selectfont\bfseries\color{sidehead}%
+   \MakeUppercase{#1}}\par\nobreak
+  \vspace{1.5pt}%
+  {\color{siderule}\rule{\linewidth}{0.3pt}}\par\nobreak
+  \vspace{4pt}%
+}
+
+% Main section heading
+\newcommand{\mainsec}[1]{%
+  \vspace{9pt}%
+  {\fontsize{10.5}{12}\selectfont\bfseries\color{accent}%
+   \MakeUppercase{#1}}\par\nobreak
+  \vspace{1.5pt}%
+  {\color{rulecolor}\rule{\linewidth}{0.3pt}}\par\nobreak
+  \vspace{4pt}%
+}
+
+% Work / Education entry (4-part heading)
+\newcommand{\entry}[4]{%
+  \par\vspace{3pt}%
+  {\small\textbf{#1}\hfill#2}\par\nobreak
+  {\small\itshape\color{subtext}#3\hfill#4}\par\nobreak
+  \vspace{1pt}%
+}
+
+% Compact education line
+\newcommand{\eduline}[3]{%
+  {\small\textbf{#1}\;\color{subtext}|\;#2\hfill#3}\par
+  \vspace{2pt}%
+}
+
+% Bullet item
+\newcommand{\blt}[1]{\item\small #1}
+
+% Dot separator
+\newcommand{\skd}{\,\textperiodcentered\,}
+
+% Skill sub-heading (sidebar)
+\newcommand{\skillgroup}[1]{%
+  {\fontsize{7.5}{9}\selectfont\bfseries\color{sidehead}%
+   \MakeUppercase{#1}}\par\vspace{1pt}%
+}
+
+%══════════════════════════════════════════════════════════
+\begin{document}
+
+%──── Background ──────────────────────────────────────────
+\begin{tikzpicture}[remember picture,overlay]
+  % Sidebar fill
+  \fill[sidebar] (current page.north west) rectangle
+    ([xshift=\sidewidth]current page.south west);
+  % Thin divider between sidebar and main
+  \draw[rulecolor,line width=0.3pt]
+    ([xshift=\sidewidth]current page.north west) --
+    ([xshift=\sidewidth]current page.south west);
+\end{tikzpicture}%
+%
+\noindent
+%──── SIDEBAR ─────────────────────────────────────────────
+\begin{minipage}[t][\paperheight]{\sidewidth}%
+\hspace{\sidepad}%
+\begin{minipage}[t]{\dimexpr\sidewidth-2\sidepad\relax}%
+\raggedright
+\vspace{0.6cm}
+
+% ── Photo ────────────────────────────────────────────────
+\begin{tikzpicture}
+  \clip[rounded corners=5pt] (0,0) rectangle (2.5cm,2.5cm);
+  \IfFileExists{harshi.png}{%
+    \node[anchor=south west,inner sep=0pt] at (0,0)
+      {\includegraphics[width=2.5cm,height=2.5cm]{harshi.png}};
+  }{%
+    \fill[gray!8] (0,0) rectangle (2.5cm,2.5cm);
+    \node[font=\footnotesize\color{gray!35}] at (1.25cm,1.25cm) {Photo};
+  }
+\end{tikzpicture}
+
+% ── Contact ──────────────────────────────────────────────
+\sidesec{Contact}
+\small
+\faIcon{phone-alt}\;\href{tel:+919771911781}{+91-9771911781}\\[3pt]
+\faIcon{envelope}\;\href{mailto:harshitraj1712@gmail.com}{harshitraj1712@gmail.com}\\[3pt]
+\faIcon{map-marker-alt}\;Agra, Uttar Pradesh\\[3pt]
+\faLinkedin\;LinkedIn\\[3pt]
+\faBehance\;Behance\\[3pt]
+\faIcon{language}\;English, Hindi
+
+% ── Core Design Skills ───────────────────────────────────
+\sidesec{Design Skills}
+
+\skillgroup{Design \& Development}
+{\small Research \& Development\skd Problem Solving\skd
+Design Process\skd Ideation\skd Conceptualization\skd
+Technical Drawing\skd Prototyping}\par
+\vspace{5pt}
+
+\skillgroup{Digital}
+{\small 3D Modeling\skd Rendering\skd Illustrations\skd
+Photography}\par
+\vspace{5pt}
+
+\skillgroup{Product Development}
+{\small Market Research\skd Trend Study\skd
+Materials \& Finishes\skd Sampling\skd
+Merchandising\skd Production Coordination}
+
+% ── Software ─────────────────────────────────────────────
+\sidesec{Software}
+\small
+\faIcon{cube}\;Rhino 3D\\[2pt]
+\faIcon{image}\;KeyShot\\[2pt]
+\faIcon{palette}\;Adobe Photoshop\\[2pt]
+\faIcon{pen-nib}\;Adobe Illustrator\\[2pt]
+\faIcon{file-alt}\;Adobe InDesign\\[2pt]
+\faIcon{cubes}\;Blender\\[2pt]
+\faIcon{pen-fancy}\;CorelDRAW\\[2pt]
+\faIcon{drafting-compass}\;AutoCAD 2D\\[2pt]
+\faIcon{pencil-alt}\;Procreate
+
+% ── Soft Skills ──────────────────────────────────────────
+\sidesec{Soft Skills}
+\small
+Problem Solving\skd Collaboration\skd
+Attention to Detail\skd Creative Ideation
+
+% ── Interests ────────────────────────────────────────────
+\sidesec{Interests}
+\small
+\faIcon{volleyball-ball}\;Volleyball\quad
+\faIcon{camera}\;Photography\\[3pt]
+\faIcon{mountain}\;Trekking\quad
+\faIcon{plane}\;Travel
+
+\end{minipage}%
+\end{minipage}%
+%
+%──── MAIN CONTENT ────────────────────────────────────────
+\begin{minipage}[t][\paperheight]{\mainwidth}%
+\hspace{\mainpad}%
+\begin{minipage}[t]{\dimexpr\mainwidth-2\mainpad\relax}%
+\vspace{0.55cm}
+
+% ── Name & Title ─────────────────────────────────────────
+{\fontsize{26}{30}\selectfont\bfseries\color{accent}HARSHIT RAJ}\par
+\vspace{3pt}
+{\fontsize{11}{14}\selectfont\color{subtext}%
+  Furniture\;\textbar\;Home D\'{e}cor\;\textbar\;%
+  Lighting Product Designer}\par
+
+% ── Professional Profile ─────────────────────────────────
+\mainsec{Professional Profile}
+\small
+NIFT Mumbai graduate and Furniture/Lifestyle Product Designer with
+experience across concept development, design, merchandising, sampling,
+and production. Skilled in developing production-ready furniture,
+home d\'{e}cor, and lighting products that balance aesthetics,
+functionality, and manufacturability. Experienced with stone, marble,
+wood, metal, and fiberstone, with strengths in CAD, 3D modeling,
+rendering, technical drawing, prototyping, research, and AI-assisted
+workflows.
+
+% ── Work Experience ──────────────────────────────────────
+\mainsec{Work Experience}
+
+\entry{Stonemen Crafts India Private Limited}{Agra \& Moradabad, India}
+      {Furniture / Lifestyle Product Designer}{Jul 2024 -- Present}
+\begin{itemize}[leftmargin=0.14in,itemsep=0pt,topsep=1pt,parsep=0pt]
+  \blt{Manage product development from initial concept through sampling
+    and final production for furniture, home d\'{e}cor, and lighting
+    collections.}
+  \blt{Create new product concepts through market research, trend
+    analysis, and buyer requirements, balancing aesthetics, functionality,
+    quality, and manufacturability.}
+  \blt{Develop detailed 3D models and photorealistic product visuals
+    using Rhino 3D and KeyShot; research materials and finishes for
+    production feasibility.}
+  \blt{Collaborate with buyers, merchandising, sampling, and production
+    teams to translate concepts into well-executed, manufacturable
+    products.}
+  \blt{Selected designs presented to and approved by renowned buyers
+    including CB2, RH, Pottery Barn, West Elm, and Anthropologie US.}
+\end{itemize}
+
+\entry{DEEBACO}{Delhi, India}
+      {Accessories Designer}{Jan 2024 -- Apr 2024}
+\begin{itemize}[leftmargin=0.14in,itemsep=0pt,topsep=1pt,parsep=0pt]
+  \blt{Delivered creative concepts, sketches, and sample sourcing in
+    collaboration with the design team for presentation ranges based on
+    Wedding Collection and Geometry Pattern themes.}
+\end{itemize}
+
+% ── Education ────────────────────────────────────────────
+\mainsec{Education}
+
+\entry{National Institute of Fashion Technology (NIFT), Mumbai}
+      {Mumbai, India}
+      {Bachelor of Design (B.Des) --- Fashion \& Lifestyle Accessory Design}
+      {2020 -- 2024}
+
+\begin{itemize}[leftmargin=0.14in,itemsep=1pt,topsep=1pt,parsep=0pt]
+  \blt{\textbf{Deepening Specialization:} Fashion \& Lifestyle Accessory Design}
+  \blt{Focused on design ideation, conceptualization, development, and translating creative concepts into functional design outcomes.}
+\end{itemize}
+
+\vspace{3pt}
+
+\entry{Baldwin Academy School, Patna}
+      {Patna, India}
+      {Higher Secondary School}
+      {2018 -- 2020}
+
+
+
+\vspace{3pt}
+
+\entry{Sri Sathya Sai School, Rishikesh}
+      {Rishikesh, India}
+      {Senior Secondary School}
+      {2018}
+\begin{itemize}[leftmargin=0.14in,itemsep=1pt,topsep=1pt,parsep=0pt]
+  \blt{\textbf{School Captain (2017--18):} Served as Sport School Captain, demonstrating leadership, responsibility, teamwork, and coordination.}
+  \blt{Developed leadership and team-oriented skills through active participation in school sports.}
+\end{itemize}
+
+% ── Achievements ─────────────────────────────────────────
+\mainsec{Achievements}
+
+\begin{itemize}[leftmargin=0.14in,itemsep=2pt,topsep=1pt,parsep=0pt]
+
+  \blt{\textbf{International Buyer Recognition:} Product designs developed
+  at Stonemen Crafts were selected by renowned buyers including CB2, RH,
+  Pottery Barn, West Elm, and Anthropologie US.}
+
+  \blt{\textbf{Spectrum 2023--2024 --- Winning Team:} Member of the
+  winning team and contributed as a player, demonstrating teamwork,
+  coordination, and competitive performance.}
+
+  \blt{\textbf{Sport School Captain (2017--18):} Served as School Captain
+  at Baldwin Academy School, demonstrating leadership, responsibility,
+  decision-making, and team coordination.}
+
+\end{itemize}
+
+\end{minipage}%
+\end{minipage}
+
+\end{document}
 
